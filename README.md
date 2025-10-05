@@ -1,7 +1,11 @@
-# Run
-![logo.png](logo.png)
-> A universal script runner that executes code in 30+ programming languages with automatic runtime detection, installation assistance, and built-in benchmarking.
 
+<div>
+  <img src="assets/run-logo.svg" alt="Run Logo" width="100"/>
+  <p><em>execute anything</em></p>
+</div>
+
+# Run
+> A universal script runner that executes code in 30+ programming languages with automatic runtime detection, installation assistance, and built-in benchmarking.
 [![Go Version](https://img.shields.io/badge/Go-1.24+-00ADD8?style=flat&logo=go)](https://go.dev/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 <div class="logo-card">
