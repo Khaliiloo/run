@@ -161,7 +161,7 @@ var languageConfigs = map[string]LanguageConfig{
 			return []string{"echo", "Please install Rust from https://rustup.rs/ by running: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"}
 		},
 		CompileCmd: []string{"rustc"},
-		RunCmd:     []string{filepath.Base(strings.TrimSuffix(os.Args[1], filepath.Ext(os.Args[1])))},
+		RunCmd:     []string{},
 		IsCompiled: true,
 	},
 	".cs": {
@@ -582,9 +582,6 @@ func main() {
 			printHelp()
 			os.Exit(0)
 		}
-	} else {
-		printHelp()
-		os.Exit(1)
 	}
 
 	// Parse flags and file
@@ -967,8 +964,8 @@ func executeFile(sourceFile string, config LanguageConfig, ext string) {
 			// For C#, dotnet run handles execution from the project directory
 			runArgs = config.RunCmd[1:]
 			cmd = exec.Command(config.RunCmd[0], runArgs...)
-		} else if ext == ".rs" {
-			// For Rust, the executable is in the current directory
+		} else if ext == ".rs" || ext == ".cpp" || ext == ".c" || ext == ".nim" || ext == ".zig" || ext == ".hs" || ext == ".pas" || ext == ".fs" || ext == ".ml" {
+			// For compiled programs, the executable is in the current directory
 			cmd = exec.Command("./" + executableName)
 		} else {
 			cmd = exec.Command(runArgs[0], runArgs[1:]...)
