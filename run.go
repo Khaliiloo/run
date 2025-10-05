@@ -582,6 +582,9 @@ func main() {
 			printHelp()
 			os.Exit(0)
 		}
+	} else {
+		printHelp()
+		os.Exit(1)
 	}
 
 	// Parse flags and file
