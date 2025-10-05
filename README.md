@@ -72,8 +72,7 @@ go install github.com/Khaliiloo/run@latest
 
 ```bash
 # Linux/macOS
-curl -L https://github.com/Khaliiloo/run/releases/latest/download/install.sh | bash
-
+curl -L https://raw.githubusercontent.com/Khaliiloo/run/main/install.sh | bash
 # Or download manually from releases page
 # https://github.com/Khaliiloo/run/releases
 ```
